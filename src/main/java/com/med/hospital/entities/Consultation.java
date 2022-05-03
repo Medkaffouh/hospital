@@ -1,5 +1,6 @@
 package com.med.hospital.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,5 +15,6 @@ public class Consultation {
     private Date dateConsultation;
     private String rapport;
     @OneToOne()
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private RendezVous rendezVous;
 }
