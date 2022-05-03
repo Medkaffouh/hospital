@@ -9,9 +9,11 @@ import java.util.Date;
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 public class RendezVous {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    private String id; //esseyer d'utiliser maintenant le id comme string // voir ce class dans l'implemetation metier
+    //@Temporal(TemporalType.DATE)
     private Date date;
+    @Enumerated(EnumType.STRING) // pour stocké sur form string pas ordinal
     private StatusRDV status;
     @ManyToOne
     private Patient patient;
